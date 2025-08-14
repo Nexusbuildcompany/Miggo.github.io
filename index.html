@@ -34,10 +34,7 @@
       display: flex;
       flex-direction: column;
       width: min(90%, 700px);
-    }
-    .banner {
       position: relative;
-      flex: 1;
     }
     .banner img {
       width: 100%;
@@ -53,7 +50,10 @@
       border: 2px solid var(--card-border);
       box-shadow: 0 0 15px rgba(255, 0, 85, 0.5);
       background: #000;
-      margin: -60px auto 16px;
+      position: absolute;
+      top: 140px; /* sobrepõe o banner */
+      left: 50%;
+      transform: translateX(-50%);
     }
     .avatar img {
       width: 100%;
@@ -62,7 +62,7 @@
     }
     .content {
       flex: 1;
-      padding: 20px;
+      padding: 80px 20px 20px; /* espaço para avatar */
       text-align: center;
     }
     h1 {
@@ -120,9 +120,14 @@
         height: 100%;
       }
       .avatar {
-        margin: 20px auto;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
       }
       .content {
+        flex: 1;
+        padding: 20px;
         text-align: left;
         display: flex;
         flex-direction: column;
@@ -133,14 +138,15 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <div class="card">
     <div class="banner">
       <img src="miggo-banner.png" alt="Banner do Miggo">
-      <div class="avatar">
-        <img src="miggo-avatar.png" alt="Foto do Miggo">
-      </div>
+    </div>
+    <div class="avatar">
+      <img src="miggo-avatar.png" alt="Foto do Miggo">
     </div>
     <div class="content">
       <h1>Miggo</h1>
